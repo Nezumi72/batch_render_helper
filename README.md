@@ -4,13 +4,13 @@ Simple UI to help with local render file naming.
 
 # Installation:
 
-![](enabling_addon.png)
+![](images/enabling_addon.png)
 
 Located in testing section of addons.
 
 # Panel layout:
 
-![](panel_layout.png)
+![](images/panel_layout.png)
 
 The BR Helper tab will be located in the 3d Viewport UI (N-panel) section.
 
@@ -21,53 +21,53 @@ It consists of 3 portions:
 
 # Loop Controls:
 
-![](loop_controls_start.png)
+![](images/loop_controls_start.png)
 
 Beginning with 2 simple operators you can easily add which scenes of the current blend file to render by adding the current scene or simply adding all scenes within the file.
 
-![](loop_controls_2.png)
+![](images/loop_controls_2.png)
 
 Once scenes are added you can select the check box to render all frames in a scene, uncheck to select a start and end frame range, or click the x to remove the scene from the render queue.
 
 # Output file details:
 
-![](output_file_details_1.png)
+![](images/output_file_details_1.png)
 
 Beginning with a selection of the ouput file folder and a seperator you can quickly build your desired filename structure here. If your Blend file is already saved the default '//' output directory will be the same directory as your blend file. By default all files will at a minimum include the frame number from the render to avoid accidental overwriting of the a render.
 
 Adding fields to the file name:
 
-![](output_file_details_2.png)
+![](images/output_file_details_2.png)
 
 Once a field is added you can either simply type in a fixed text string or copy a full data path of a scene property to be used.
 
-![](data_path_1.png)
+![](images/data_path_1.png)
 
 Once a full data path is copied into a field use the check box to enable evaluation of the field. If the field is properly evaluated the selected property should show directly below in a user friendly format like where the data path was copied from.
 
-![](output_file_details_3.png)
+![](images/output_file_details_3.png)
 
 # Potential Gotcha's:
 
-![](potential_gotcha_1.png)
+![](images/potential_gotcha_1.png)
 
-![](potential_gotcha_2.png)
+![](images/potential_gotcha_2.png)
 
 Some fields like the active camera selection will show a pointer address instead of a simple string name. This is not an error as the field is a pointer to the object not the objects name. 
 
-![](potential_gotcha_3.png)
+![](images/potential_gotcha_3.png)
 
 To correct this simply add '.name' to the end of the data path previously copied the underlying evaluated property now displays the intended result.
 
 # Output Operators:
 
-![](output_operators_1.png)
+![](images/output_operators_1.png)
 
 The Test output function allows you to verify all filenames that will be used prior to any render. 
 
-![](test_output_1.png)
+![](images/test_output_1.png)
 
-![](test_output_2.png)
+![](images/test_output_2.png)
 
 Simply open a text editor window and use the dropdown selection to view/review the generated file name format.
 
@@ -97,7 +97,7 @@ Simply open a text editor window and use the dropdown selection to view/review t
 
 You can now see that each scene, camera, and frame range are properly identified (even though the selections were made in a specific scene) as well as the default file directory. If you identify something you wish to change simply add, modify or remove in the panel in the 3d viewport and verify by running the test again overwriting the existing text editor file.
 
-![](modified_1.png)
+![](images/modified_1.png)
 
 ```txt
 //..\..\..\tmp\test\Scene-Camera-1.png
