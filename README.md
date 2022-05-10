@@ -6,7 +6,10 @@ Simple UI to help with local render file naming.
 
 ![](images/enabling_addon.png)
 
-Located in testing section of addons.
+Download `.zip` file.
+From the `Edit` menu select `Preferences`.
+In the preferences panel select install and browse to the `batch render helper.zip` file.
+To addon can be found in the testing section of addons.
 
 # Panel layout:
 
@@ -27,7 +30,13 @@ Beginning with 2 simple operators you can easily add which scenes of the current
 
 ![](images/loop_controls_2.png)
 
-Once scenes are added you can select the check box to render all frames in a scene, uncheck to select a start and end frame range, or click the x to remove the scene from the render queue.
+* The arrow on the left side enables expanding and collapsing of available options per scene.
+* This is followed by the scene name.
+* The Checkbox is used to quickly enable rendering the full frame range of the scene at a frame step of 1.
+* The `X` will remove the scene from the queue.
+* If the scene's details are expanded you will find options for a start, end and frame step. These options are only evaluated if the check mark is unticked.
+
+
 
 # Output file details:
 
@@ -43,7 +52,7 @@ Once a field is added you can either simply type in a fixed text string or copy 
 
 ![](images/data_path_1.png)
 
-Once a full data path is copied into a field use the check box to enable evaluation of the field. If the field is properly evaluated the selected property should show directly below in a user friendly format like where the data path was copied from.
+Once a full data path is copied into a field use the check box to enable evaluation of the field. You can verify the field is properly evaluated by clicking the expand arrow to the left. If the field is properly evaluated the selected property should show directly below in a user friendly format like where the data path was copied from.
 
 ![](images/output_file_details_3.png)
 
@@ -116,3 +125,10 @@ You can now see that each scene, camera, and frame range are properly identified
 ```
 
 When satisfied use the render operator to begin rendering.
+
+# Change Log:
+
+"version": (0, 0, 2)
+* Included frame step control option.
+* Added expand/collapse to loop and file name part sections.
+* Converted Scene name to label in loop controls section.
