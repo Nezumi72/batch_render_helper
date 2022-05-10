@@ -132,3 +132,8 @@ When satisfied use the render operator to begin rendering.
 * Included frame step control option.
 * Added expand/collapse to loop and file name part sections.
 * Converted Scene name to label in loop controls section.
+
+"version": (0, 0, 3)
+* Referenced scenes as pointers in loop control eliminating the need for several variables and coding.
+* This assists in preventing errors if the user modifies the scene name.
+* This also removed the utility of having a check box to force full frame range and step count of 1 as the properties are now directly modified from the panel.
