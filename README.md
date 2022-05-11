@@ -32,9 +32,9 @@ Beginning with 2 simple operators you can easily add which scenes of the current
 
 * The arrow on the left side enables expanding and collapsing of available options per scene.
 * This is followed by the scene name.
-* The Checkbox is used to quickly enable rendering the full frame range of the scene at a frame step of 1.
+* The up and down triangles allow for re-arranging items in list.
 * The `X` will remove the scene from the queue.
-* If the scene's details are expanded you will find options for a start, end and frame step. These options are only evaluated if the check mark is unticked.
+* If the scene's details are expanded can directly control the start, end, and frame step of each scene without having to change scenes.
 
 
 
@@ -42,7 +42,7 @@ Beginning with 2 simple operators you can easily add which scenes of the current
 
 ![](images/output_file_details_1.png)
 
-Beginning with a selection of the ouput file folder and a seperator you can quickly build your desired filename structure here. If your Blend file is already saved the default '//' output directory will be the same directory as your blend file. By default all files will at a minimum include the frame number from the render to avoid accidental overwriting of the a render.
+Beginning with a selection of the ouput file folder and a seperator you can quickly build your desired filename structure here. If your Blend file is already saved the default '//' output directory will be the same directory as your blend file. By default all files will at a minimum include the frame number from the render to avoid accidental overwriting of the a render. The frame leading 0's count allows a user defined qty for the frame count.
 
 Adding fields to the file name:
 
@@ -137,3 +137,10 @@ When satisfied use the render operator to begin rendering.
 * Referenced scenes as pointers in loop control eliminating the need for several variables and coding.
 * This assists in preventing errors if the user modifies the scene name.
 * This also removed the utility of having a check box to force full frame range and step count of 1 as the properties are now directly modified from the panel.
+
+"version": (0, 0, 4)
+* Added controls to re-order items in collection properties.
+* Merge similar operator code blocks utilizing operator variables to maintain functionality.
+* Added control for # leading 0's of frame counnter.
+* Prevent adding duplicate scenes.
+
