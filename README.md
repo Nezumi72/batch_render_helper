@@ -42,7 +42,7 @@ Beginning with 2 simple operators you can easily add which scenes of the current
 
 ![](images/output_file_details_1.png)
 
-Beginning with a selection of the ouput file folder and a seperator you can quickly build your desired filename structure here. If your Blend file is already saved the default '//' output directory will be the same directory as your blend file. By default all files will at a minimum include the frame number from the render to avoid accidental overwriting of the a render. The frame leading 0's count allows a user defined qty for the frame count.
+Beginning with a selection of the output file folder and a separator you can quickly build your desired filename structure here. If your Blend file is already saved the default '//' output directory will be the same directory as your blend file. By default all files will at a minimum include the frame number from the render to avoid accidental overwriting of the a render. The frame leading 0's count allows a user defined qty for the frame count.
 
 Adding fields to the file name:
 
@@ -78,7 +78,7 @@ The Test output function allows you to verify all filenames that will be used pr
 
 ![](images/test_output_2.png)
 
-Simply open a text editor window and use the dropdown selection to view/review the generated file name format.
+Simply open a text editor window and use the drop down selection to view/review the generated file name format.
 
 ```txt
 //simple text-Scene-Camera-1.png
@@ -141,6 +141,11 @@ When satisfied use the render operator to begin rendering.
 "version": (0, 0, 4)
 * Added controls to re-order items in collection properties.
 * Merge similar operator code blocks utilizing operator variables to maintain functionality.
-* Added control for # leading 0's of frame counnter.
+* Added control for # leading 0's of frame counter.
 * Prevent adding duplicate scenes.
+
+"version": (0, 0, 5)
+* Fixed bug preventing removing output filename parts.
+* Added enumerated list with common fields for output filename parts.
+* Initialized output filename parts to include current frame but allowed its removal.
 
