@@ -206,7 +206,7 @@ C:\tmp\test\Scene.002-0021-BLENDER_EEVEE.png
 C:\tmp\test\Scene.002-0025-BLENDER_EEVEE.png
 ```
 
-We have now added and evaluated the render engine setting for each of our scenes. Furthermore, we can see that each scene is currently set to a different render engine and fortunately go to our scene panels and correct these settings prior to render.
+We have now added and evaluated the render engine setting for each of our scenes. Furthermore, we can see that each scene is currently set to a different render engine and fortunately can go to our scene panels and correct these settings prior to render.
 
 [Back to Contents](#contents)
 
