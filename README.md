@@ -1,22 +1,24 @@
 # Batch Render Helper:
 
-Simple UI to help with local render file naming.
+Simple UI to help with local render file naming. For a more robust solution consider supporting Render+ available at BlenderMarket. The Tutorials provided by https://sinestesia.co/ have assisted in the creation of this add-on.
 
 # Contents
 
 1. [Installation](#installation)
 2. [Panel Layout](#panel-layout)
-    * [Loop Controls](#loop-controls)
+    * [Scene Controls](#scene-controls)
     * [Output file details](#output-file-details)
     * [Output Operators](#output-operators)
 3. [Basic Operation](#basic-operation)
-    * [Setting Loop Controls](#setting-loop-controls)
+    * [Setting Scene Controls](#setting-scene-controls)
     * [Defining File Name Structure](#defining-file-name-structure)
     * [Testing Output](#testing-output)
     * [Performing Render](#performing-render)
-4. [Advanced Operation](#advanced-operation)
+4. [Intermediate Operation](#intermediate-operation)
+    * [Background Rendering](#background-rendering)
+5. [Advanced Operation](#advanced-operation)
     * [Potential Gotcha's](#potential-gotchas)
-5. [Change Log](#change-log)
+6. [Change Log](#change-log)
 
 # Installation:
 
@@ -25,7 +27,8 @@ Simple UI to help with local render file naming.
 * Download `.zip` file.
 * From the `Edit` menu select `Preferences` > `Add-ons`.
 * In the preferences panel select install and browse to the `batch render helper.zip` file.
-* The addon can be found in the testing section of addons and checked to enable.
+* The add-on can be found in the `Testing` section.
+* The `View Mode` selection determines panel style.
 
 
 [Back to Contents](#contents)
@@ -37,13 +40,13 @@ Simple UI to help with local render file naming.
 The BR Helper tab will be located in the 3d Viewport UI (N-panel) section.
 
 It consists of 3 portions:
-* Loop Controls: Where you define which scenes and frame ranges you want to render.
+* Scene Controls: Where you define which scenes and frame ranges you want to render.
 * Output File details: Where you provide an output folder, and setup the naming format of your files.
 * Output operators: Containing a Test and Render operator.
 
 [Back to Contents](#contents)
 
-# Loop Controls:
+# Scene Controls:
 
 ![](images/loop_controls_start.png)
 
@@ -64,13 +67,13 @@ Beginning with a selection of the output file folder and a separator you can qui
 ![](images/output_operators_1.png)
 
 The `Test Output` operator allows you to verify all filenames that will be used prior to any render.
-The `Render` operator begins rendering all selected frames.
+The `Render` operator begins rendering all selected frames. The `Gen Batch File Commands` operator will create the basic commands required for performing a background render.
 
 [Back to Contents](#contents)
 
 # Basic Operation
 
-# Setting Loop Controls
+# Setting Scene Controls
 
 After adding 1 or more scenes to be rendered:
 
@@ -100,9 +103,13 @@ After adding 1 or more scenes to be rendered:
     * current frame - Will update per scene and frame range to the frame being rendered.
 * Fields will be combined in sequence top to bottom to create a full file path and filename.
 
+![](images/presets_1.png)
+
+* Presets have been added as of version (0.0.7) to enable saving the fields added to create the file name structure. If for example you desire to always include the file name, the active scene name, and active camera name these can be save in order as a preset to be quickly added in another file.
+
 ![](images/output_file_details_2_more.png)
 
-When adding fields to create a file name structure you will notice a small checkbox. This is used internally to determine the exact text to be used when creating the file name and will be discussed further in the advanced operation section. For user convenience these are already set as enabled for all items except the text field option and may be left alone.
+* When adding fields to create a file name structure you will notice a small checkbox. This is used internally to determine the exact text to be used when creating the file name and will be discussed further in the advanced operation section. For user convenience these are already set as enabled for all items except the text field option and may be left alone.
 
 [Back to Contents](#contents)
 
@@ -150,6 +157,20 @@ Once satisfied with the filenames shown in the test use the `Render` operator to
 ![](images/render_files.png)
 
 With the exception of the operating system sorting you should note no difference in the final file names and the names generated during the test.
+
+[Back to Contents](#contents)
+
+# Intermediate Operation
+
+# Background Rendering
+
+Due to inherent security risks associated with running batch commands I have intentionally left this as only a text data block generation that you may choose to copy and create a batch file from.
+
+The Gen Batch File Commands operator located in the Output Operators panel will create the required commands to automate background rendering from a batch file. This specific setup is not fully optimized and does not contain all available options for [command line rendering]( https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html). Once generated the entire text block can be saved as a `.bat` file. It is important to note that if you are using relative file paths the batch file should be saved in the same directory as your `.blend` file. Once saved the batch file can be run without an open session of blender to perform background rendering.
+
+![](images/gen_batch_file_commands1.png)
+
+![](images/gen_batch_file_commands2.png)
 
 [Back to Contents](#contents)
 
@@ -206,7 +227,7 @@ C:\tmp\test\Scene.002-0021-BLENDER_EEVEE.png
 C:\tmp\test\Scene.002-0025-BLENDER_EEVEE.png
 ```
 
-We have now added and evaluated the render engine setting for each of our scenes. Furthermore, we can see that each scene is currently set to a different render engine and fortunately can go to our scene panels and correct these settings prior to render.
+We have now added and evaluated the render engine setting for each of our scenes. Furthermore, we can see that each scene is currently set to a different render engine and fortunately go to our scene panels and correct these settings prior to render.
 
 [Back to Contents](#contents)
 
@@ -250,5 +271,17 @@ To correct this simply add '.name' to the end of the data path previously copied
 "version": (0, 0, 6)
 * Added scene render resolutions to loop controls panel.
 * Updating documentation.
+
+"version": (0, 0, 7)
+* Added optional UI_list panel layout available through add-on preferences.
+
+![](images/add-on_prefs.png)
+
+* Added Presets for name part section for convenience of repeated naming conventions.
+
+![](images/presets.png)
+
+* Added text commands for batch file to background render.
+* Updated code for above changes.
 
 [Back to Contents](#contents)
