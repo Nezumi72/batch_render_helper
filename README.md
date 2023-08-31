@@ -27,7 +27,7 @@ Simple UI to help with local render file naming. For a more robust solution cons
 * Download `.zip` file.
 * From the `Edit` menu select `Preferences` > `Add-ons`.
 * In the preferences panel select install and browse to the `batch render helper.zip` file.
-* The add-on can be found in the `Testing` section.
+* The add-on can be found in the `Community` section. Filtered on File (or User for blender 3.6.1)
 * The `View Mode` selection determines panel style.
 
 
